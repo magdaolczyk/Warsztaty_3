@@ -32,37 +32,45 @@ ZADANIA
 
 1. Przygotowanie projektu
 Najpierw przygotuj nowy projekt, skonfiguruj projekt (połączenie z bazą danych, szablony itp.), stwórz nową aplikację.
+
 2. Utwórz szablon bazowy
 Stwórz szablon bazowy do aplikacji. Nie musi być wyrafinowany i skomplikowany. Umieść w nim elementy, które będą widoczne na wszystkich stronach, takie jak tytuł, stopka, menu itp.
+
 3. Model sali
 Stwórz nowy model dla sali. Jeżeli chcesz przetrzymywać dodatkowe informacje, to zaplanuj to teraz.
+
 4. URL-e do Sali
 Stwórz URL-e z następującymi funkcjonalnościami do zarządzania salami:
-    a) Tworzenie formularza do stworzenia nowej sali (/room/new).
-    b) Tworzenie nowej sali (POST formularza na adres /room/new).
-    c) Tworzenie formularza do modyfikacji sali (/room/modify/{id}).
-    d) Modyfikacja sali (POST formularza na adres /room/modify/{id}).
-    e) Usunięcie podanej sali (/room/delete/{id}).
-    f) Pokazanie danych jednej sali (/room/{id}).
-    g) Pokazanie wszystkich sal (/).
+    - Tworzenie formularza do stworzenia nowej sali (/room/new).
+    - Tworzenie nowej sali (POST formularza na adres /room/new).
+    - Tworzenie formularza do modyfikacji sali (/room/modify/{id}).
+    - Modyfikacja sali (POST formularza na adres /room/modify/{id}).
+    - Usunięcie podanej sali (/room/delete/{id}).
+    - Pokazanie danych jednej sali (/room/{id}).
+    - Pokazanie wszystkich sal (/).
+    
 5. Sala
 Stwórz widoki sali. Widoki powinny wyświetlać/odbierać formularze lub wyświetlać listę sal. Nie zapomnij o przycisku Nowa sala i jego obsłudze na ekranie głównym.
+
 6. Rezerwacja sali
 Stwórz nowy model dla rezerwacji. Zmodyfikuj model sali w taki sposób, żeby trzymała relacje.
+
 7. Zmiana widoku sali
 Zmodyfikuj widok danych sali tak, aby umożliwiał dokonania rezerwacji.
 Widok zmień następująco:
-    a) Dodaj do widoku formularz, który będzie odsyłał do strony POST /reservation/{id-sali}
-    b) Dodaj widok, który obsłuży formularz. Widok powinien sprawdzić następujące rzeczy:
+    - Dodaj do widoku formularz, który będzie odsyłał do strony POST /reservation/{id-sali}
+    - Dodaj widok, który obsłuży formularz. Widok powinien sprawdzić następujące rzeczy:
         - czy sala jest już zarezerwowana tego dnia?
         - czy data rezerwacji nie jest z przeszłości?
 Jeśli któryś z tych warunków zostanie spełniony, poinformuj użytkownika o błędzie. Jeśli dokonana zostanie rezerwacja, przenieś użytkownika na stronę główną.
+
 8. Wyszukiwanie
 Dodaj do strony głównej wyszukiwarkę. Umieść tam formularz przyjmujący wartości, według których program ma szukać wolnej sali:
-    a) nazwę sali,
-    b) minimalna potrzebna pojemność sali,
-    c) dzień,
-    d) obecność rzutnika.
+    - nazwę sali,
+    - minimalna potrzebna pojemność sali,
+    - dzień,
+    - obecność rzutnika.
+
 Niech formularz wysyła dane metodą GET na adres /search.
 Utwórz widok, w którym odbierzesz metodą GET dane z formularza wyszukiwania. Na podstawie tych danych zbuduj zapytanie do modeli, które wyszuka sale według podanych kryteriów.
 Widok powinien zwrócić listę wolnych sal. Jeśli nie znajdzie żadnej, powinien pojawić się komunikat „Brak wolnych sal dla podanych kryteriów wyszukiwania”.
